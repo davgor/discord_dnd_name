@@ -1,0 +1,19 @@
+name: Acieo - cron job
+
+on:
+  schedule:
+    - cron:  '0 23 * * 5' # Runs at 6 PM Central Standard Time
+    - cron:  '0 22 * * 5' # Runs at 6 PM Central Daylight Time
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Notify Discord
+      uses: Ilshidur/action-discord@master
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_TEST }}
+        DISCORD_USERNAME: 'Acieo He/Him (David)'
+
+
