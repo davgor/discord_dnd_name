@@ -2,9 +2,9 @@ name: Acieo - cron job
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron:  '0 23 * * 5' # Runs at 6 PM Central Standard Time
-    - cron:  '0 22 * * 5' # Runs at 6 PM Central Daylight Time
+  # schedule:
+  #   - cron:  '0 23 * * 5' # Runs at 6 PM Central Standard Time
+  #   - cron:  '0 22 * * 5' # Runs at 6 PM Central Daylight Time
 jobs:
   build:
     runs-on: ubuntu-latest
